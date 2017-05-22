@@ -1,0 +1,9 @@
+{
+    "extends": ["tslint:recommended", "tslint-eslint-rules"],
+    "rules": {
+        "valid-jsdoc": [true, {
+            "requireParamType": false,
+            "requireReturnType": false
+        }]
+    }
+}
