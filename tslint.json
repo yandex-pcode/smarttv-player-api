@@ -4,6 +4,7 @@
         "valid-jsdoc": [true, {
             "requireParamType": false,
             "requireReturnType": false
-        }]
+        }],
+        "interface-name": [true, "never-prefix"]
     }
 }

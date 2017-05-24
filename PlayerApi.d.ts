@@ -2,7 +2,7 @@
  * Возможные остояния плеера.
  */
 export enum PlayerState {
-    NOT_STARTED = -1,
+    INACTIVE = -1,
     STOPPED = 0,
     PLAYING = 1,
     BUFFERING = 2,
@@ -12,7 +12,7 @@ export enum PlayerState {
 /**
  * Конфиг плейлиста, может быть строкой (ссылка на плейлист) или объектом.
  */
-export interface ISourceConfig {
+export interface SourceConfig {
     /**
      * Плейлист.
      */
@@ -31,7 +31,7 @@ export interface ISourceConfig {
 /**
  * Обработчики событий плеера.
  */
-export interface IPublicHandlers {
+export interface PublicHandlers {
     /**
      * Вызывается, когда длительность загруженного плейлиста изменилась
      * @param duration
@@ -57,11 +57,11 @@ export interface IPublicHandlers {
 /**
  * Параметры конфигурации плеера.
  */
-export interface IPlayerParams {
+export interface PlayerParams {
     /**
      * Конфигурация плейлиста или ссылка на плейлист, который будет загружен в созданном плеере.
      */
-    source: ISourceConfig | string;
+    source: SourceConfig | string;
     /**
      * Элемент/#id, в котором будет создан плеер.
      */
@@ -73,7 +73,7 @@ export interface IPlayerParams {
     /**
      * Объект с обработчиками событий плеера.
      */
-    handlers?: Partial<IPublicHandlers>;
+    handlers?: Partial<PublicHandlers>;
     // TODO: ad config
 }
 
@@ -83,7 +83,7 @@ export abstract class PlayerApi {
      * @param params - Параметры нового плеера.
      * @returns Объект плеера.
      */
-    constructor(params: IPlayerParams);
+    constructor(params: PlayerParams);
     /**
      * @returns Текущее состояние плеера.
      */
@@ -126,5 +126,5 @@ export abstract class PlayerApi {
      * @param config - Строка с ссылкой на плейлист или объект с конфигурацией плейлиста.
      * @returns `Promise`, который будет исполнен после загрузки нового плейлиста.
      */
-    public setSource(config: ISourceConfig | string): Promise<void>;
+    public setSource(config: SourceConfig | string): Promise<void>;
 }
