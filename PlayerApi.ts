@@ -1,13 +1,14 @@
 /**
  * Возможные остояния плеера.
  */
-export declare enum PlayerState {
+export enum PlayerState {
     INACTIVE = -1,
     STOPPED = 0,
     PLAYING = 1,
     BUFFERING = 2,
     PAUSED = 3,
 }
+
 /**
  * Конфиг плейлиста, может быть строкой (ссылка на плейлист) или объектом.
  */
@@ -24,7 +25,9 @@ export interface SourceConfig {
      * Ссылка на постер (картинка-превью).
      */
     preview?: string;
+    // TODO: DRM config
 }
+
 /**
  * Обработчики событий плеера.
  */
@@ -48,8 +51,9 @@ export interface PublicHandlers {
      * Вызывается, когда произошла ошибка.
      * @param error
      */
-    onError: (error: any) => void;
+    onError: (error: any) => void; // TODO: add error interface
 }
+
 /**
  * Параметры конфигурации плеера.
  */
@@ -70,55 +74,57 @@ export interface PlayerParams {
      * Объект с обработчиками событий плеера.
      */
     handlers?: Partial<PublicHandlers>;
+    // TODO: ad config
 }
-export declare abstract class PlayerApi {
+
+export abstract class PlayerApi {
     /**
      * Создает плеер с переданными параметрами.
      * @param params - Параметры нового плеера.
      * @returns Объект плеера.
      */
-    constructor(params: PlayerParams);
+    constructor(params: PlayerParams) {}
     /**
      * @returns Текущее состояние плеера.
      */
-    abstract getState(): PlayerState;
+    public abstract getState(): PlayerState;
     /**
      * @returns Текущее время воспроизведения в секундах (может быть не актуально для LIVE плейлистов).
      */
-    abstract getCurrentTime(): number;
+    public abstract getCurrentTime(): number;
     /**
      * @returns Текущая продолжительность видео (может быть не актуально для LIVE и EVENT плейлистов).
      */
-    abstract getDuration(): number;
+    public abstract getDuration(): number;
     /**
      * @returns Текущее значение громкости (от 0 до 100).
      */
-    abstract getVolume(): number;
+    public abstract getVolume(): number;
     /**
      * Задает значение громкости (от 0 до 100).
      * @param volume - Новое значение громкости.
      * @returns `Promise`, который будет исполнен после установки нового значения громкости.
      */
-    abstract setVolume(volume: number): Promise<void>;
+    public abstract setVolume(volume: number): Promise<void>;
     /**
      * Уничножает экземпляр плеера и все созданые им DOM-элементы.
      * @returns `Promise`, который будет исполнен после уничтожения плеера.
      */
-    abstract destroy(): Promise<void>;
+    public abstract destroy(): Promise<void>;
     /**
      * Начать проигрывание.
      * @returns `Promise`, который будет исполнен после начала проигрывания.
      */
-    abstract play(): Promise<void>;
+    public abstract play(): Promise<void>;
     /**
      * Поставить плеер на паузу.
      * @returns `Promise`, который будет исполнен после постановки плеера на паузу.
      */
-    abstract pause(): Promise<void>;
+    public abstract pause(): Promise<void>;
     /**
      * Сменить текущую конфигурацию плейлиста.
      * @param config - Строка с ссылкой на плейлист или объект с конфигурацией плейлиста.
      * @returns `Promise`, который будет исполнен после загрузки нового плейлиста.
      */
-    abstract setSource(config: SourceConfig | string): Promise<void>;
+    public abstract setSource(config: SourceConfig | string): Promise<void>;
 }

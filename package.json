@@ -1,9 +1,12 @@
 {
   "name": "smarttv-player-api",
   "version": "0.0.1",
-  "description": "smarttv stram player API spec",
-  "main": "PlayerApi.d.ts",
+  "description": "Smart TV player API specification",
+  "main": "./PlayerApi.js",
+  "types": "./PlayerApi.d.ts",
   "scripts": {
+    "start": "npm run build && npm run docs",
+    "build": "tsc -d PlayerApi.ts",
     "docs": "typedoc --out docs/ --includeDeclarations --excludeExternals --theme minimal --mode modules --readme none --hideGenerator PlayerApi.d.ts",
     "test": "tslint -e 'node_modules/**/*.ts?(x)' '**/*.ts'"
   },
