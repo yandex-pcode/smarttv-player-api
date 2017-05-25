@@ -1,0 +1,21 @@
+{
+  "name": "smarttv-player-api",
+  "version": "0.0.1",
+  "description": "smarttv stram player API spec",
+  "main": "PlayerApi.d.ts",
+  "scripts": {
+    "docs": "typedoc --out docs/ --includeDeclarations --excludeExternals --theme minimal --mode modules --readme none --hideGenerator PlayerApi.d.ts",
+    "test": "tslint -e 'node_modules/**/*.ts?(x)' '**/*.ts'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yandex-pcode/smarttv-player-api.git"
+  },
+  "homepage": "https://github.com/yandex-pcode/smarttv-player-api#readme",
+  "devDependencies": {
+    "tslint": "^5.3.0",
+    "tslint-eslint-rules": "^4.1.0",
+    "typedoc": "^0.7.0",
+    "typescript": "^2.3.2"
+  }
+}
