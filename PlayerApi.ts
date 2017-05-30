@@ -103,28 +103,23 @@ export abstract class PlayerApi {
     /**
      * Задает значение громкости (от 0 до 100).
      * @param volume - Новое значение громкости.
-     * @returns `Promise`, который будет исполнен после установки нового значения громкости.
      */
-    public abstract setVolume(volume: number): Promise<void>;
+    public abstract setVolume(volume: number): void;
     /**
      * Уничножает экземпляр плеера и все созданые им DOM-элементы.
-     * @returns `Promise`, который будет исполнен после уничтожения плеера.
      */
-    public abstract destroy(): Promise<void>;
+    public abstract destroy(): void;
     /**
      * Начать проигрывание.
-     * @returns `Promise`, который будет исполнен после начала проигрывания.
      */
-    public abstract play(): Promise<void>;
+    public abstract play(): void;
     /**
      * Поставить плеер на паузу.
-     * @returns `Promise`, который будет исполнен после постановки плеера на паузу.
      */
-    public abstract pause(): Promise<void>;
+    public abstract pause(): void;
     /**
      * Сменить текущую конфигурацию плейлиста.
      * @param config - Строка с ссылкой на плейлист или объект с конфигурацией плейлиста.
-     * @returns `Promise`, который будет исполнен после загрузки нового плейлиста.
      */
-    public abstract setSource(config: SourceConfig | string): Promise<void>;
+    public abstract setSource(config: SourceConfig | string): void;
 }
