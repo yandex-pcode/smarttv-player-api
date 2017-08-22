@@ -65,7 +65,7 @@ export interface PlayerParams {
     /**
      * Элемент/#id, в котором будет создан плеер.
      */
-    element: string | Element;
+    element: string | HTMLElement;
     /**
      * Будет ли проигрывание начинаться автоматически после инициализации плеера.
      */
