@@ -8,8 +8,8 @@ var PlayerState;
     PlayerState[PlayerState["INACTIVE"] = -1] = "INACTIVE";
     PlayerState[PlayerState["STOPPED"] = 0] = "STOPPED";
     PlayerState[PlayerState["PLAYING"] = 1] = "PLAYING";
-    PlayerState[PlayerState["BUFFERING"] = 2] = "BUFFERING";
-    PlayerState[PlayerState["PAUSED"] = 3] = "PAUSED";
+    PlayerState[PlayerState["PAUSED"] = 2] = "PAUSED";
+    PlayerState[PlayerState["BUFFERING"] = 3] = "BUFFERING";
 })(PlayerState = exports.PlayerState || (exports.PlayerState = {}));
 var PlayerApi = (function () {
     /**

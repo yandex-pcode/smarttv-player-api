@@ -5,8 +5,8 @@ export enum PlayerState {
     INACTIVE = -1,
     STOPPED = 0,
     PLAYING = 1,
-    BUFFERING = 2,
-    PAUSED = 3,
+    PAUSED = 2,
+    BUFFERING = 3
 }
 
 /**
