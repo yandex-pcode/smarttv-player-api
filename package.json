@@ -16,9 +16,9 @@
   },
   "homepage": "https://github.com/yandex-pcode/smarttv-player-api#readme",
   "devDependencies": {
-    "tslint": "^5.7.0",
-    "tslint-eslint-rules": "^4.1.1",
-    "typedoc": "^0.8.0",
-    "typescript": "^2.4.2"
+    "tslint": "5.7.0",
+    "tslint-eslint-rules": "4.1.1",
+    "typedoc": "0.8.0",
+    "typescript": "2.4.2"
   }
 }
