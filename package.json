@@ -8,7 +8,8 @@
     "start": "npm run build && npm run docs",
     "build": "tsc -d PlayerApi.ts",
     "docs": "typedoc --out docs/ --includeDeclarations --excludeExternals --theme minimal --mode modules --readme none --hideGenerator PlayerApi.d.ts",
-    "test": "tslint -e 'node_modules/**/*.ts?(x)' -e '**/*d.ts' '**/*.ts'"
+    "test": "tslint -e 'node_modules/**/*.ts?(x)' -e '**/*d.ts' '**/*.ts'",
+    "prepush": "npm run build; git-mods --staged_ok"
   },
   "repository": {
     "type": "git",
@@ -16,6 +17,8 @@
   },
   "homepage": "https://github.com/yandex-pcode/smarttv-player-api#readme",
   "devDependencies": {
+    "git-mods": "1.0.7",
+    "husky": "0.14.3",
     "tslint": "5.7.0",
     "tslint-eslint-rules": "4.1.1",
     "typedoc": "0.8.0",

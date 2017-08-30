@@ -97,34 +97,34 @@ export declare abstract class PlayerApi {
     /**
      * Задает значение громкости (от 0 до 100).
      * @param volume - Новое значение громкости.
-     * @returns void
+     * @returns {void}
      */
     abstract setVolume(volume: number): void;
     /**
      * Уничножает экземпляр плеера и все созданые им DOM-элементы.
-     * @returns void
+     * @returns {void}
      */
     abstract destroy(): void;
     /**
      * Начать проигрывание.
-     * @returns void
+     * @returns {void}
      */
     abstract play(): void;
     /**
      * Поставить плеер на паузу.
-     * @returns void
+     * @returns {void}
      */
     abstract pause(): void;
     /**
      * Перемотать проигрывание на заданное время
      * @param {number} time - Время в секундах
-     * @returns void
+     * @returns {void}
      */
     abstract seek(time: number): void;
     /**
      * Сменить текущую конфигурацию плейлиста.
      * @param config - Строка с ссылкой на плейлист или объект с конфигурацией плейлиста.
-     * @returns void
+     * @returns {void}
      */
     abstract setSource(config: SourceConfig | string): void;
 }
