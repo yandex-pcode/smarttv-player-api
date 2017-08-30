@@ -1,2 +1,17 @@
 language: node_js
 node_js: node
+before_deploy: 
+  - npm start
+  - rm -rf node_modules/
+  - mkdir -p docs
+  - touch docs/.nojekyll
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: docs
+  on:
+    branch: master
+env:
+  global:
+    secure: jwPWdehjFnCnwTEYQF7tjlmj5KACul+hy6BFiw/rKHL24ms7GHtfgD8b96B0R2mTmb9lx6EClkLl+zbNXPeXgGp9VTqFHmy3TIuMlF9NnHHJAmvxaSITpz+YARmtbJUu93J729UHY5FWwINi9kxFS30gT9F3GCZq9qbmrOc+Hfc3qi5gPOg5+hDDqFXL7v9FPwKV44XvwpifPCXeoYL9EtuJrupc9MLHsSAnlauO3YofgxhbPf5/Q0oXh85zTcInSaOEz2QOyu7hd4zu9Oa2dOc+cBP2W1ak6ohqwwSfFGPWZR/oKa5tVl/jF7qGvXThQGCpT5Ar+QPI/Lek1tmnKu19mi6XjrTraM2VVfOc4g8z+HaXwxjlIP06lGi2jLjyu3OkWkTTGYBZHHm8YJAxZRxYFke3iyT1cZSq+/0PZsLgNukHsqsA+620gwgH4z9NIGCW5+lXrtrAWiiMJUdDS5F4o2jemwSfvuX6aRdbcOS0oJ/ffLSX1Lr4Pfd0ozl2TsN62G7OcHhkii3awy1ugcsbSJqL0G1yI9ouUod/N8XEMY8ke10pt9La+ROVRA9hzU9ox52ZUpd4qVbxAteOJTkwFtiqVJNIyoxrfX1GuMef/j4JdCWIZvwDz+7ZRX92RhsEXrGJM9DqImgP+qP8L99+pmKcyK/PHdTOUc/vgjU=
