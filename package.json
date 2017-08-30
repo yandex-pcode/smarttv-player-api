@@ -1,6 +1,6 @@
 {
   "name": "smarttv-player-api",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Smart TV player API specification",
   "main": "./PlayerApi.js",
   "types": "./PlayerApi.d.ts",
