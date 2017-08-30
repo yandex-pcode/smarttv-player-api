@@ -118,6 +118,11 @@ export abstract class PlayerApi {
      */
     public abstract pause(): void;
     /**
+     * Перемотать проигрывание на заданное время
+     * @param {number} time - Время в секундах
+     */
+    public abstract seek(time: number): void;
+    /**
      * Сменить текущую конфигурацию плейлиста.
      * @param config - Строка с ссылкой на плейлист или объект с конфигурацией плейлиста.
      */
