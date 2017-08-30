@@ -6,7 +6,7 @@ export enum PlayerState {
     STOPPED = 0,
     PLAYING = 1,
     PAUSED = 2,
-    BUFFERING = 3
+    BUFFERING = 3,
 }
 
 /**
@@ -83,7 +83,7 @@ export abstract class PlayerApi {
      * @param params - Параметры нового плеера.
      * @returns Объект плеера.
      */
-    constructor(params: PlayerParams) {}
+    constructor(params: PlayerParams) { /**/ }
     /**
      * @returns Текущее состояние плеера.
      */
@@ -103,28 +103,34 @@ export abstract class PlayerApi {
     /**
      * Задает значение громкости (от 0 до 100).
      * @param volume - Новое значение громкости.
+     * @returns {void}
      */
     public abstract setVolume(volume: number): void;
     /**
      * Уничножает экземпляр плеера и все созданые им DOM-элементы.
+     * @returns {void}
      */
     public abstract destroy(): void;
     /**
      * Начать проигрывание.
+     * @returns {void}
      */
     public abstract play(): void;
     /**
      * Поставить плеер на паузу.
+     * @returns {void}
      */
     public abstract pause(): void;
     /**
      * Перемотать проигрывание на заданное время
      * @param {number} time - Время в секундах
+     * @returns {void}
      */
     public abstract seek(time: number): void;
     /**
      * Сменить текущую конфигурацию плейлиста.
      * @param config - Строка с ссылкой на плейлист или объект с конфигурацией плейлиста.
+     * @returns {void}
      */
     public abstract setSource(config: SourceConfig | string): void;
 }
